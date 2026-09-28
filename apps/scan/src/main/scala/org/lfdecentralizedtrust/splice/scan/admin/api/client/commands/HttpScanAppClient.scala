@@ -3283,7 +3283,7 @@ object HttpScanAppClient {
   }
 
   case class GetBulkObjectChecksums(
-      objectKeys: Seq[String],
+      objectKeys: Seq[String]
   ) extends InternalBaseCommand[
         http.GetBulkObjectChecksumsResponse,
         definitions.GetBulkObjectChecksumsResponse,
@@ -3294,7 +3294,7 @@ object HttpScanAppClient {
     ): EitherT[Future, Either[Throwable, HttpResponse], GetBulkObjectChecksumsResponse] =
       client.getBulkObjectChecksums(
         definitions.GetBulkObjectChecksumsRequest(
-          objectKeys.toVector,
+          objectKeys.toVector
         ),
         headers,
       )
@@ -3307,6 +3307,32 @@ object HttpScanAppClient {
     ]] = {
       case http.GetBulkObjectChecksumsResponse.OK(response) => Right(response)
       case http.GetBulkObjectChecksumsResponse.NotImplemented(err) => Left(err.error)
+    }
+  }
+
+  case class GetBulkObjectsProgress(
+      recordTime: CantonTimestamp
+  ) extends InternalBaseCommand[
+        http.GetBulkObjectsProgressResponse,
+        definitions.GetBulkObjectsProgressResponse,
+      ] {
+    override def submitRequest(
+        client: Client,
+        headers: List[HttpHeader],
+    ): EitherT[Future, Either[Throwable, HttpResponse], http.GetBulkObjectsProgressResponse] =
+      client.getBulkObjectsProgress(
+        recordTime.toInstant.atOffset(java.time.ZoneOffset.UTC),
+        headers,
+      )
+
+    override protected def handleOk()(implicit
+        decoder: TemplateJsonDecoder
+    ): PartialFunction[http.GetBulkObjectsProgressResponse, Either[
+      String,
+      definitions.GetBulkObjectsProgressResponse,
+    ]] = {
+      case http.GetBulkObjectsProgressResponse.OK(response) => Right(response)
+      case http.GetBulkObjectsProgressResponse.NotImplemented(err) => Left(err.error)
     }
   }
 
