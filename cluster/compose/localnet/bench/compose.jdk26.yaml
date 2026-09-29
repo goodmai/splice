@@ -1,0 +1,20 @@
+# JDK 26 + compressed oops + compact object headers (JEP 519, product flag since JDK 25).
+services:
+  canton:
+    build:
+      context: ${LOCALNET_DIR}/bench
+      dockerfile: Dockerfile.jdk26
+      args:
+        BASE_IMAGE: ${IMAGE_REPO}canton:${IMAGE_TAG}
+    image: localnet-bench/canton-jdk26:${IMAGE_TAG}
+    environment:
+      _JAVA_OPTIONS: "-Xms512m -Xmx2560m -XX:+UseCompactObjectHeaders"
+  splice:
+    build:
+      context: ${LOCALNET_DIR}/bench
+      dockerfile: Dockerfile.jdk26
+      args:
+        BASE_IMAGE: ${IMAGE_REPO}splice-app:${IMAGE_TAG}
+    image: localnet-bench/splice-app-jdk26:${IMAGE_TAG}
+    environment:
+      _JAVA_OPTIONS: "-Xms512m -Xmx2560m -XX:+UseCompactObjectHeaders"

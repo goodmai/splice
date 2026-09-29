@@ -1,0 +1,17 @@
+{
+  "variant": "jdk26",
+  "startup_s": 142,
+  "containers": 11,
+  "java": "openjdk version \"26.0.2.1\" 2026-08-18",
+  "load": {
+    "requests": 9000,
+    "ok": 9000,
+    "workers": 32,
+    "wall_s": 60.0,
+    "errors": {},
+    "rps": 150.0,
+    "p50_ms": 1.8,
+    "p95_ms": 3.4,
+    "p99_ms": 4.5
+  }
+}

@@ -1,0 +1,8 @@
+# Optimized JVM flags on the stock JDK 21 images: re-enable compressed oops (safe below a 32 GiB heap).
+services:
+  canton:
+    environment:
+      _JAVA_OPTIONS: "-Xms512m -Xmx2560m"
+  splice:
+    environment:
+      _JAVA_OPTIONS: "-Xms512m -Xmx2560m"

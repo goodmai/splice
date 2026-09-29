@@ -1,0 +1,11 @@
+{"name":"bench-ans-web-ui-app-provider","mem_bytes":"17.64MiB / 256MiB","cpu":"0.00%"}
+{"name":"bench-ans-web-ui-app-user","mem_bytes":"17.63MiB / 256MiB","cpu":"0.00%"}
+{"name":"bench-canton","mem_bytes":"2.049GiB / 4GiB","cpu":"3.23%"}
+{"name":"bench-nginx","mem_bytes":"2.441MiB / 32MiB","cpu":"0.00%"}
+{"name":"bench-postgres","mem_bytes":"1.152GiB / 2GiB","cpu":"5.04%"}
+{"name":"bench-scan-web-ui","mem_bytes":"17.45MiB / 256MiB","cpu":"0.00%"}
+{"name":"bench-splice","mem_bytes":"1.257GiB / 3GiB","cpu":"13.84%"}
+{"name":"bench-sv-web-ui","mem_bytes":"17.64MiB / 512MiB","cpu":"0.00%"}
+{"name":"bench-wallet-web-ui-app-provider","mem_bytes":"17.43MiB / 256MiB","cpu":"0.00%"}
+{"name":"bench-wallet-web-ui-app-user","mem_bytes":"17.55MiB / 256MiB","cpu":"0.00%"}
+{"name":"bench-wallet-web-ui-sv","mem_bytes":"17.73MiB / 256MiB","cpu":"0.00%"}

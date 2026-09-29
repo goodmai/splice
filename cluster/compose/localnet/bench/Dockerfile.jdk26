@@ -1,0 +1,8 @@
+# Derived image: swaps the Temurin 21 in /usr/java (JAVA_HOME of the Splice/Canton images) for Temurin 26.
+ARG BASE_IMAGE
+FROM eclipse-temurin:26-jre AS jdk
+FROM ${BASE_IMAGE}
+USER root
+RUN rm -rf /usr/java
+COPY --from=jdk /opt/java/openjdk /usr/java
+USER nonroot

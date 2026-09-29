@@ -1,0 +1,15 @@
+# Lets the bench stack run next to any other stack on the host: unique container names,
+# no fixed host ports for the participant/validator APIs (TEST_PORT is set empty by bench.sh).
+services:
+  ans-web-ui-app-provider: { container_name: bench-ans-web-ui-app-provider }
+  ans-web-ui-app-user: { container_name: bench-ans-web-ui-app-user }
+  canton: { container_name: bench-canton }
+  nginx: { container_name: bench-nginx }
+  postgres: { container_name: bench-postgres }
+  scan-web-ui: { container_name: bench-scan-web-ui }
+  splice: { container_name: bench-splice }
+  sv-web-ui: { container_name: bench-sv-web-ui }
+  swagger-ui: { container_name: bench-swagger-ui }
+  wallet-web-ui-app-provider: { container_name: bench-wallet-web-ui-app-provider }
+  wallet-web-ui-app-user: { container_name: bench-wallet-web-ui-app-user }
+  wallet-web-ui-sv: { container_name: bench-wallet-web-ui-sv }

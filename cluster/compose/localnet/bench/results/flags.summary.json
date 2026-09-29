@@ -1,0 +1,17 @@
+{
+  "variant": "flags",
+  "startup_s": 137,
+  "containers": 11,
+  "java": "openjdk version \"21.0.12\" 2026-07-21 LTS",
+  "load": {
+    "requests": 9000,
+    "ok": 9000,
+    "workers": 32,
+    "wall_s": 60.0,
+    "errors": {},
+    "rps": 150.0,
+    "p50_ms": 1.5,
+    "p95_ms": 3.3,
+    "p99_ms": 4.6
+  }
+}
